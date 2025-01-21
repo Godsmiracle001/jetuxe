@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jetuxe Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+        /* Custom hover effect for submenu */
+        .submenu:hover > ul {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <!-- Header -->
+    <header class="bg-green-600 dark:bg-gray-800 text-white">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="logo.jpg" alt="Jetuxe Logo" class="w-10 h-10 rounded-full">
+                <h1 class="text-2xl font-bold">Jetuxe Healthcare</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:underline">Home</a>
+                <div class="submenu relative">
+                    <a href="#" class="hover:underline">About Us</a>
+                    <ul class="absolute hidden bg-white dark:bg-gray-700 text-black dark:text-white shadow-lg">
+                        <li>
+                            <a href="#vision" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Vision</a>
+                        </li>
+                        <li>
+                            <a href="#mission" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Mission</a>
+                        </li>
+                        <li>
+                            <a href="#values" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Corporate Values</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#services" class="hover:underline">Services</a>
+                <a href="#contact" class="hover:underline">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <main class="container mx-auto px-4 py-16">
+        <section id="vision" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-green-600">Our Vision</h2>
+            <p class="text-lg leading-relaxed">
+                To be the leading provider of cutting-edge healthcare solutions, ensuring access to innovative and affordable medical technologies for a healthier world.
+            </p>
+        </section>
+        
+        <section id="mission" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-green-600">Our Mission</h2>
+            <p class="text-lg leading-relaxed">
+                Our mission is to revolutionize healthcare delivery by offering high-quality products, exceptional services, and tailored solutions that empower medical professionals to achieve excellence.
+            </p>
+        </section>
+        
+        <section id="values">
+            <h2 class="text-3xl font-bold mb-4 text-green-600">Our Corporate Values</h2>
+            <ul class="list-disc list-inside">
+                <li class="text-lg leading-relaxed">
+                    <strong>Integrity:</strong> We adhere to the highest standards of ethics and transparency in all our operations.
+                </li>
+                <li class="text-lg leading-relaxed">
+                    <strong>Innovation:</strong> Constantly exploring new ways to improve healthcare outcomes.
+                </li>
+                <li class="text-lg leading-relaxed">
+                    <strong>Customer Focus:</strong> Commitment to exceeding customer expectations at every interaction.
+                </li>
+                <li class="text-lg leading-relaxed">
+                    <strong>Collaboration:</strong> Partnering with clients and stakeholders to achieve common goals.
+                </li>
+                <li class="text-lg leading-relaxed">
+                    <strong>Excellence:</strong> Striving for excellence in everything we do.
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 dark:bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Jetuxe Healthcare. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

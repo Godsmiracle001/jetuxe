@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Jetuxe Healthcare</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-green-600 dark:bg-gray-800 text-white">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="logo.jpg" alt="Jetuxe Logo" class="w-10 h-10 rounded-full">
+                <h1 class="text-2xl font-bold">Jetuxe Healthcare</h1>
+            </div>
+            <!-- Hamburger Menu -->
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Desktop Navigation Links -->
+            <nav id="desktop-menu" class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="about.html" class="hover:underline">About Us</a>
+                <a href="products.html" class="hover:underline">Products</a>
+                <a href="quote.html" class="hover:underline">Get a Quote</a>
+                <a href="contact.html" class="hover:underline">Contact Us</a>
+            </nav>
+        </div>
+        <!-- Mobile Navigation Links -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-green-700 dark:bg-gray-900 text-white">
+            <a href="index.html" class="block py-2 px-4 hover:bg-green-800">Home</a>
+            <a href="about.html" class="block py-2 px-4 hover:bg-green-800">About Us</a>
+            <a href="products.html" class="block py-2 px-4 hover:bg-green-800">Products</a>
+            <a href="quote.html" class="block py-2 px-4 hover:bg-green-800">Get a Quote</a>
+            <a href="contact.html" class="block py-2 px-4 hover:bg-green-800">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Contact Details -->
+            <div class="space-y-6">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-phone-alt text-green-600 text-xl"></i>
+                    <div>
+                        <h3 class="font-bold">Phone Number</h3>
+                        <p>+234-123-456-7890</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-envelope text-green-600 text-xl"></i>
+                    <div>
+                        <h3 class="font-bold">Email Address</h3>
+                        <p>contact@jetuxehealthcare.ng</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-map-marker-alt text-green-600 text-xl"></i>
+                    <div>
+                        <h3 class="font-bold">Office Address</h3>
+                        <p>No. 123 Health Avenue, Abuja, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form
+                action="mailto:contact@jetuxehealthcare.ng"
+                method="post"
+                enctype="text/plain"
+                class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 space-y-4"
+            >
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-1">Your Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-gray-700 dark:border-gray-600"
+                        required
+                    >
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-1">Your Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-gray-700 dark:border-gray-600"
+                        required
+                    >
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-gray-700 dark:border-gray-600"
+                        required
+                    ></textarea>
+                </div>
+                <button
+                    type="submit"
+                    class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition"
+                >
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 dark:bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Jetuxe Healthcare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

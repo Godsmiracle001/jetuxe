@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Products - Jetuxe Healthcare</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
+		<script>
+			//slider
+			document.addEventListener("DOMContentLoaded", () => {
+				const slider = document.querySelector(".slider");
+				const slides = document.querySelectorAll(".slider > div");
+				let currentIndex = 0;
+
+				const updateSlider = () => {
+					slider.style.transform = `translateX(-${
+						currentIndex * 100
+					}%)`;
+				};
+
+				setInterval(() => {
+					currentIndex = (currentIndex + 1) % slides.length;
+					updateSlider();
+				}, 5000); // Change slide every 5 seconds
+			});
+
+			// Dark mode toggle
+			function toggleDarkMode() {
+				const root = document.documentElement;
+				if (root.classList.contains("dark")) {
+					root.classList.remove("dark");
+					localStorage.setItem("theme", "light");
+				} else {
+					root.classList.add("dark");
+					localStorage.setItem("theme", "dark");
+				}
+			}
+
+			// Set initial theme based on localStorage
+			document.addEventListener("DOMContentLoaded", () => {
+				if (localStorage.getItem("theme") === "dark") {
+					document.documentElement.classList.add("dark");
+				}
+			});
+
+			// Mobile menu toggle
+			function toggleMobileMenu() {
+				document
+					.getElementById("mobile-menu")
+					.classList.toggle("hidden");
+			}
+
+			// Toggle submenu
+			function toggleSubmenu(menuId) {
+				document.getElementById(menuId).classList.toggle("hidden");
+			}
+		</script>
+		<style>
+			.slider {
+				display: flex;
+				transition: transform 0.5s ease-in-out;
+				width: 100%;
+			}
+
+			.slider > div {
+				min-width: 100%;
+			}
+		</style>
+	</head>
+
+	<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+		<header class="bg-green-600 dark:bg-gray-800 text-white">
+			<div
+				class="container mx-auto px-4 py-4 flex justify-between items-center"
+			>
+				<div class="flex items-center space-x-4">
+					<img
+						src="logo.jpg"
+						alt="Jetuxe Logo"
+						class="w-10 h-10 rounded-full"
+					/>
+					<h1 class="text-2xl font-bold">Jetuxe Healthcare</h1>
+				</div>
+
+				<nav class="hidden md:flex space-x-6">
+					<a href="index.html" class="hover:underline">Home</a>
+					<div class="relative group">
+						<button
+							onclick="toggleSubmenu('about-us-submenu')"
+							class="hover:underline"
+						>
+							About Us
+						</button>
+						<ul
+							id="about-us-submenu"
+							class="absolute left-0 mt-2 hidden bg-white dark:bg-gray-700 text-black dark:text-white shadow-lg"
+						>
+							<li>
+								<a
+									href="#vision"
+									class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+									>Vision</a
+								>
+							</li>
+							<li>
+								<a
+									href="#mission"
+									class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+									>Mission</a
+								>
+							</li>
+							<li>
+								<a
+									href="#values"
+									class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+									>Corporate Values</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="relative group">
+						<button
+							onclick="toggleSubmenu('products-submenu')"
+							class="hover:underline"
+						>
+							Products
+						</button>
+						<ul
+							id="products-submenu"
+							class="absolute left-0 mt-2 hidden bg-white dark:bg-gray-700 text-black dark:text-white shadow-lg"
+						>
+							<li>
+								<a
+									href="ivd.html"
+									class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+									>IVD</a
+								>
+							</li>
+							<li>
+								<a
+									href="non-ivd.html"
+									class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+									>Non IVD</a
+								>
+							</li>
+							<li>
+								<a
+									href="hospital-equipment.html"
+									class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+									>Hospital Equipment</a
+								>
+							</li>
+							<li>
+								<a
+									href="consumables.html"
+									class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+									>Consumables</a
+								>
+							</li>
+						</ul>
+					</div>
+					<a href="#services" class="hover:underline">Services</a>
+					<a href="quote.html" class="hover:underline">Get a Quote</a>
+					<a href="#news" class="hover:underline">News</a>
+					<a href="#contact" class="hover:underline">Contact Us</a>
+				</nav>
+
+				<button
+					onclick="toggleDarkMode()"
+					class="p-2 bg-gray-200 dark:bg-gray-600 rounded-full"
+				>
+					<i class="fas fa-moon"></i>
+				</button>
+
+				<button
+					class="md:hidden p-2 bg-gray-200 dark:bg-gray-600 rounded-full"
+					onclick="toggleMobileMenu()"
+				>
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+
+			<div
+				id="mobile-menu"
+				class="hidden md:hidden bg-white dark:bg-gray-700"
+			>
+				<ul class="space-y-2 py-2">
+					<li>
+						<a
+							href="index.html"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+							>Home</a
+						>
+					</li>
+					<li>
+						<button
+							class="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+							onclick="toggleSubmenu('mobile-about-us-submenu')"
+						>
+							About Us
+							<i class="fas fa-chevron-down float-right"></i>
+						</button>
+						<ul
+							id="mobile-about-us-submenu"
+							class="hidden space-y-2 pl-6 bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+						>
+							<li>
+								<a
+									href="#vision"
+									class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+									>Vision</a
+								>
+							</li>
+							<li>
+								<a
+									href="#mission"
+									class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+									>Mission</a
+								>
+							</li>
+							<li>
+								<a
+									href="#values"
+									class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+									>Corporate Values</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<button
+							class="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+							onclick="toggleSubmenu('mobile-products-submenu')"
+						>
+							Products
+							<i class="fas fa-chevron-down float-right"></i>
+						</button>
+						<ul
+							id="mobile-products-submenu"
+							class="hidden space-y-2 pl-6 bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+						>
+							<li>
+								<a
+									href="ivd.html"
+									class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+									>IVD</a
+								>
+							</li>
+							<li>
+								<a
+									href="non-ivd.html"
+									class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+									>Non IVD</a
+								>
+							</li>
+							<li>
+								<a
+									href="hospital-equipment.html"
+									class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+									>Hospital Equipment</a
+								>
+							</li>
+							<li>
+								<a
+									href="consumables.html"
+									class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+									>Consumables</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#services"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+							>Services</a
+						>
+					</li>
+					<li>
+						<a
+							href="#news"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+							>News</a
+						>
+					</li>
+					<li>
+						<a
+							href="#contact"
+							class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+							>Contact Us</a
+						>
+					</li>
+				</ul>
+			</div>
+		</header>
+
+		<main class="py-16">
+			<div class="container mx-auto px-4">
+				<h2 class="text-3xl font-bold mb-8">Our Products</h2>
+
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+				>
+					<a
+						href="ivd.html"
+						class="border rounded-lg p-6 bg-white dark:bg-gray-700 shadow-md hover:shadow-lg"
+					>
+						<h3 class="text-xl font-bold mb-4">IVD</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Explore In Vitro Diagnostics equipment.
+						</p>
+					</a>
+					<a
+						href="non-ivd.html"
+						class="border rounded-lg p-6 bg-white dark:bg-gray-700 shadow-md hover:shadow-lg"
+					>
+						<h3 class="text-xl font-bold mb-4">Non IVD</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Discover Non-IVD medical solutions.
+						</p>
+					</a>
+					<a
+						href="hospital-equipment.html"
+						class="border rounded-lg p-6 bg-white dark:bg-gray-700 shadow-md hover:shadow-lg"
+					>
+						<h3 class="text-xl font-bold mb-4">
+							Hospital Equipment
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Find essential hospital equipment.
+						</p>
+					</a>
+					<a
+						href="consumables.html"
+						class="border rounded-lg p-6 bg-white dark:bg-gray-700 shadow-md hover:shadow-lg"
+					>
+						<h3 class="text-xl font-bold mb-4">Consumables</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Browse healthcare consumables.
+						</p>
+					</a>
+				</div>
+			</div>
+		</main>
+
+		<footer class="bg-green-600 text-white py-4">
+			<div class="container mx-auto px-4 text-center">
+				<p>&copy; 2025 Jetuxe Healthcare. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>

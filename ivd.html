@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jetuxe Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+        .slider {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
+
+        .slider > div {
+            min-width: 100%;
+            height: 500px;
+        }
+
+        #hero-slider {
+            position: relative;
+        }
+
+        #hero-slider button {
+            z-index: 10;
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.querySelector(".slider");
+            const slides = document.querySelectorAll(".slider > div");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+            let currentIndex = 0;
+
+            const updateSlider = () => {
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            };
+
+            prevBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            });
+
+            nextBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            });
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            }, 5000); // Change slide every 5 seconds
+        });
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <header class="bg-green-600 dark:bg-gray-800 text-white">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img
+                    src="logo.jpg"
+                    alt="Jetuxe Logo"
+                    class="w-10 h-10 rounded-full"
+                />
+                <h1 class="text-2xl font-bold">Jetuxe Healthcare</h1>
+            </div>
+
+            <nav class="hidden md:flex space-x-6 relative">
+                <a href="index.html" class="hover:underline">Home</a>
+                <div class="relative group">
+                    <button class="hover:underline">About Us</button>
+                    <ul
+                        class="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-gray-700 text-black dark:text-white shadow-lg z-50"
+                    >
+                        <li>
+                            <a
+                                href="about.html#vision"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                >Vision</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="about.html#mission"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                >Mission</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="about.html#values"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                >Corporate Values</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative group">
+                    <button class="hover:underline">Products</button>
+                    <ul
+                        class="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-gray-700 text-black dark:text-white shadow-lg z-50"
+                    >
+                        <li>
+                            <a
+                                href="ivd.html"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                >IVD</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="non-ivd.html"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                >Non IVD</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="hospital-equipment.html"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                >Hospital Equipment</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="consumables.html"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                >Consumables</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <a href="#services" class="hover:underline">Services</a>
+                <a href="quote.html" class="hover:underline">Get a Quote</a>
+                <a href="#news" class="hover:underline">News</a>
+                <a href="#contact" class="hover:underline">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    
+
+</body>
+</html>
+
+
+		<!-- Content Sections -->
+		
+		
+        <section id="products" class="bg-white dark:bg-gray-900 py-16">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-semibold text-gray-800 dark:text-white">IVD Products</h2>
+				<p class="mt-4 text-gray-600 dark:text-gray-400">
+					Discover some of our range of IVD products tailored for your needs.
+				</p>
+		
+				<div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+					<!-- Product 1 -->
+					<div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6">
+						<img src="p1.jpeg" alt="Product 1" class=>
+						<h3 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">MINDRAY BC-5000(5 PARTS HEMATOLOGY)</h3>
+						
+					</div>
+		
+					<!-- Product 2 -->
+					<div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6">
+						<img src="p2.jpeg" alt="Product 2" class=>
+						<h3 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">BS 230 CHEMISTRY ANALYZER</h3>
+						
+					</div>
+		
+					<!-- Product 3 -->
+					<div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6">
+						<img src="p3.jpeg" alt="Product 3" class=>
+						<h3 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">BA88A SEMI AUTO CHEMISTRY</h3>
+
+				</div>
+				
+						<!-- Product 4 -->
+						<div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6">
+							<img src="p4.jpg" alt="Product 1" class=>
+							<h3 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">MINDRAY BC11(3 PART HEMATOLOGY)</h3>
+							
+						</div>
+			
+						<!-- Product 5 -->
+						<div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6">
+							<img src="pix7.jpeg" alt="Product 2" class=>
+							<h3 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">CBS 50 ELECTROLYTE ANALYZER </h3>
+							
+						</div>
+			
+						<!-- Product 6 -->
+						<div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-6">
+							<img src="MICRO.jpg" alt="Product 3" class=>
+							<h3 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">INCUBATOR</h3>
+							
+						</div>
+			</div>
+		
+		
+				
+		
+
+		<!-- Footer -->
+		<footer class="bg-green-600 dark:bg-gray-800 text-white py-8">
+			<div class="container mx-auto px-4">
+				<!-- Logo and Description -->
+				<div class="flex flex-wrap justify-between items-center mb-6">
+					<div>
+						<h1 class="text-2xl font-bold mb-2">
+							Jetuxe Healthcare
+						</h1>
+						<p class="text-sm">
+							Committed to delivering top-notch healthcare
+							solutions that enhance lives and foster wellness.
+						</p>
+					</div>
+					<!-- Social Media Links -->
+					<div class="flex space-x-4">
+						<a
+							href="https://facebook.com"
+							target="_blank"
+							class="text-white hover:text-gray-300"
+						>
+							<i class="fab fa-facebook fa-lg"></i>
+						</a>
+						<a
+							href="https://twitter.com"
+							target="_blank"
+							class="text-white hover:text-gray-300"
+						>
+							<i class="fab fa-twitter fa-lg"></i>
+						</a>
+						<a
+							href="https://www.linkedin.com/company/toluxe-healthcare/"
+							target="_blank"
+							class="text-white hover:text-gray-300"
+						>
+							<i class="fab fa-linkedin fa-lg"></i>
+						</a>
+						<a
+							href="https://instagram.com"
+							target="_blank"
+							class="text-white hover:text-gray-300"
+						>
+							<i class="fab fa-instagram fa-lg"></i>
+						</a>
+						<a
+							href="https://youtube.com"
+							target="_blank"
+							class="text-white hover:text-gray-300"
+						>
+							<i class="fab fa-youtube fa-lg"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="flex flex-wrap justify-between mb-6">
+					<div class="mb-4">
+						<h2 class="font-bold text-lg mb-2">Quick Links</h2>
+						<ul>
+							<li>
+								<a href="#" class="hover:underline">Home</a>
+							</li>
+							<li>
+								<a href="about.html" class="hover:underline"
+									>About Us</a
+								>
+							</li>
+							<li>
+								<a href="products.html" class="hover:underline"
+									>Products</a
+								>
+							</li>
+							<li>
+								<a href="#services" class="hover:underline"
+									>Services</a
+								>
+							</li>
+							<li>
+								<a href="#news" class="hover:underline">News</a>
+							</li>
+							<li>
+								<a href="#contact" class="hover:underline"
+									>Contact Us</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="mb-4">
+						<h2 class="font-bold text-lg mb-2">Contact Us</h2>
+						<p>Suite B4, Umma Dantata Shopping Complex, Murtala Mohammed Way by Airport Road, Kano State, Nigeria.</p>
+						<p>
+							Email:
+							<a
+								href="mailto:info@jetuxehealthcare.com"
+								class="hover:underline"
+								>info@jetuxehealthcare.com</a
+							>
+						</p>
+						<p>Phone No: 09155594214</p>
+					</div>
+				</div>
+
+				<!-- Copyright -->
+				<div class="text-center">
+					<p class="text-sm">
+						&copy; 2025 Jetuxe Healthcare. All rights reserved.
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
